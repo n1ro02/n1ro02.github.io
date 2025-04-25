@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-04-09 14:16:53" itemprop="dateModified" datetime="2025-04-09T14:16:53+08:00">2025-04-09</time>
+                <time title="Modified: 2025-04-09 20:26:27" itemprop="dateModified" datetime="2025-04-09T20:26:27+08:00">2025-04-09</time>
               </span>
 
           
@@ -201,6 +201,16 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* <span class="type">const</span> ptr</span><br></pre></td></tr></table></figure>
 
 <p>无法改变所指（地址），但可以改变所指对象值。</p>
+<p>常量指针和指向常量的指针</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span>* pstring</span><br><span class="line"><span class="type">const</span> pstring cstr = <span class="literal">nullptr</span> <span class="comment">//const pointer </span></span><br><span class="line"><span class="type">char</span>* <span class="type">const</span> ptr = <span class="literal">nullptr</span> <span class="comment">//const pointer  </span></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* ptr = <span class="literal">nullptr</span> <span class="comment">//pointer to const </span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>左值：可以寻址的值，特点：表达式左边，可以 &amp;运算</p>
+<p>右值：不可寻址临时值，特点：表达式右边，字面量，&amp;运算 编译期会报错。</p>
+<p>类型推导</p>
+<p><code>auto</code> 在类型推导时会忽略顶层 <code>const</code>，但会保留底层 <code>const</code>。此外，<code>auto</code> 会忽略引用属性，除非显式声明为引用类型。</p>
+<p>与 <code>auto</code> 不同，<code>decltype</code> 的类型推导规则会完整保留表达式的 <code>const</code> 限定符和引用属性，包括顶层 <code>const</code> 和底层 <code>const</code>。</p>
 
       
     </div>
@@ -336,78 +346,6 @@
 <p>csapp</p>
 <p>cs144计网</p>
 <p>cmu</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/24/%E8%AE%BA%E6%96%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Zane">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="a simple blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/03/24/%E8%AE%BA%E6%96%87/" class="post-title-link" itemprop="url">论文格式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-03-24 17:53:00" itemprop="dateCreated datePublished" datetime="2025-03-24T17:53:00+08:00">2025-03-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-03-26 11:54:39" itemprop="dateModified" datetime="2025-03-26T11:54:39+08:00">2025-03-26</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>目 录</strong></p>
-<p>第一章 绪论……………………………1<br> 1.1 研究工作的背景与意义……………………………1<br> 1.2 国内外研究历史与现状……………………………2<br> 1.3 主要工作内容……………………………3<br> 1.4 本文的组织结构……………………………4</p>
-<p>第二章 相关理论与技术介绍……………………………5<br> 2.1 技术架构选型……………………………5<br>  2.1.1 SpringBoot 3 与 SpringCloud Alibaba 简介……………………………5<br>  2.1.2 Java 17 语言特性……………………………6<br> 2.2 缓存技术……………………………7<br>  2.2.1 Redis 缓存机制及其实现……………………………7<br>  2.2.2 缓存穿透、击穿、雪崩问题及解决方案……………………………8<br> 2.3 消息队列……………………………9<br>  2.3.1 RocketMQ 工作原理及使用场景……………………………9<br>  2.3.2 延迟消息的设计与实现……………………………10<br> 2.4 分库分表……………………………11<br>  2.4.1 ShardingSphere 分片策略详解……………………………11<br>  2.4.2 数据分片键的选择与优化……………………………12<br> 2.5 设计模式……………………………13<br>  2.5.1 责任链模式在业务逻辑中的应用……………………………13<br>  2.5.2 建造者模式在线程池创建中的实践……………………………14<br> 2.6 本章小结……………………………15</p>
-<p>第三章 系统需求分析与设计……………………………16<br> 3.1 需求分析……………………………16<br>  3.1.1 功能性需求……………………………16<br>  3.1.2 非功能性需求……………………………17<br> 3.2 系统架构设计……………………………18<br>  3.2.1 微服务架构设计……………………………18<br>  3.2.2 数据库设计……………………………19<br> 3.3 接口设计……………………………20<br> 3.4 本章小结……………………………21</p>
-<p>第四章 系统核心功能实现……………………………22<br> 4.1 用户服务模块实现……………………………22<br> 4.2 购票服务模块实现……………………………23<br> 4.3 订单服务模块实现……………………………24<br> 4.4 支付服务模块实现……………………………25<br> 4.5 ID 生成器实现……………………………26<br> 4.6 本章小结……………………………27</p>
-<p>第五章 系统测试及结果分析……………………………28<br> 5.1 测试环境搭建……………………………28<br> 5.2 功能测试……………………………29<br> 5.3 性能测试……………………………30<br> 5.4 测试结果与问题分析……………………………31<br> 5.5 本章小结……………………………32</p>
-<p>第六章 总结与展望……………………………33<br> 6.1 系统总结……………………………33<br> 6.2 存在的问题与不足……………………………34<br> 6.3 未来展望……………………………35</p>
-<p>参考文献……………………………36</p>
 
       
     </div>
@@ -783,7 +721,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
